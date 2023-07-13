@@ -31,6 +31,7 @@ int main(int argc, char** argv) {
   
   fclose(fp);
 
+  printf("PROGRAM START\n");
   // Interpreter
   ListNode* cell = initialize_list();
   unsigned long instruction_pointer = 0;
@@ -51,6 +52,10 @@ int main(int argc, char** argv) {
         putchar(get_data(cell));
         ++instruction_pointer;
         break;
+      case ',':
+	set_cell(cell, getchar());
+	++instruction_pointer;
+	break;
       case '<':
         if (is_prev_empty(cell))
           add_prev_node(cell);
@@ -98,5 +103,6 @@ int main(int argc, char** argv) {
   }
 
   free_entire_list(cell);
+  printf("PROGRAM END\n");
   return 0;
 }

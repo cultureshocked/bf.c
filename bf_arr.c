@@ -32,6 +32,7 @@ int main(int argc, char** argv) {
   unsigned short call_stack_ptr = 0;
   unsigned long call_stack[256] = {0};
   unsigned long instruction_ptr = 0;
+  char ch;
 
   printf("PROGRAM START\n");
   while (bf_code[instruction_ptr] != 0) {
@@ -64,6 +65,11 @@ int main(int argc, char** argv) {
         break;
       case '.':
         putchar(cell[cell_ptr]);
+        ++instruction_ptr;
+        break;
+      case ',':
+//if ((ch = getchar()) != EOF) // TODO: add macro for EOF definition 
+        cell[cell_ptr] = (ch = getchar());
         ++instruction_ptr;
         break;
       case '[':

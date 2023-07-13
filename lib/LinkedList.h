@@ -6,6 +6,7 @@ typedef struct _list_node ListNode;
 ListNode* initialize_list();
 void increment_node(ListNode* current_node);
 void decrement_node(ListNode* current_node);
+void set_cell(ListNode* current_node, char ch);
 int is_next_empty(ListNode* current_node);
 int is_prev_empty(ListNode* current_node);
 char get_data(ListNode* current_node);

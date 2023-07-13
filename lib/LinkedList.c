@@ -114,3 +114,7 @@ ListNode* get_next_node(ListNode* current_node) {
 ListNode* get_prev_node(ListNode* current_node) {
   return current_node->prev;
 }
+
+void set_cell(ListNode* current_node, char ch) {
+  current_node->data = ch;
+}
