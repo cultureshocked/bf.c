@@ -21,7 +21,7 @@ gcc -o bf_arr bf_arr.c
 
 Both implementations support negative indexing.
 
-Neither implementation supports user-input at this time, so `,` instructions will be ignored for now.
+Both implementations also support input, however EOF is not handled explicitly, so if your program involves reading input until EOF, then you will need to check the EOF definition for your system at this time.
 
 ## License
 
